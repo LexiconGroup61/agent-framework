@@ -1,4 +1,7 @@
 <Solution>
+  <Project Path="Database access/Database access.csproj" />
   <Project Path="Document/Document.csproj" />
   <Project Path="RAG/RAG.csproj" />
+  <Project Path="Structured output/Structured output.csproj" />
+  <Project Path="WebSearch/WebSearch.csproj" />
 </Solution>

@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
 using OpenAI;
 using OpenAI.Chat;
@@ -25,7 +26,13 @@ var contents = new List<AIContent>
 
 var chatMessage = new Microsoft.Extensions.AI.ChatMessage(ChatRole.User, contents);
 
-var result = await client.AsAIAgent().RunAsync(chatMessage);
+// var result = await client.AsAIAgent(
+//     new AIContext
+//     {
+//         Tools = []
+//     }
+//     
+//     ).RunAsync(chatMessage);
 
-Console.WriteLine(result.Text);
+// Console.WriteLine(result.Text);
 
