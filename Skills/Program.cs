@@ -14,7 +14,7 @@ var agent = new OpenAIClient(Environment.GetEnvironmentVariable("OPENAIAPI_KEY")
     .GetChatClient("gpt-6-astra")
     .AsAIAgent(new ChatClientAgentOptions()
     {
-        ChatOptions = new() { Instructions = "You are a helpful assistant for Good-Corp, which is based in Sweden and are a commercial business." },
+        ChatOptions = new() { Instructions = "You are a helpful assistant for Good-Corp, a commercial business based in Sweden." },
         AIContextProviders = [skillsProvider]
     });
     

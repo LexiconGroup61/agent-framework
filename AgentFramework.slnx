@@ -6,5 +6,6 @@
   <Project Path="Skills/Skills.csproj" />
   <Project Path="Streaming/Streaming.csproj" />
   <Project Path="Structured output/Structured output.csproj" />
+  <Project Path="Usage/Usage.csproj" />
   <Project Path="WebSearch/WebSearch.csproj" />
 </Solution>
