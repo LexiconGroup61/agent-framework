@@ -11,10 +11,9 @@ var skillsProvider = new AgentSkillsProvider(
 );
 
 DotNetEnv.Env.Load();
-#pragma warning disable OPENAI001
 var agent = new OpenAIClient(Environment.GetEnvironmentVariable("OPENAIAPI_KEY"))
     .GetResponsesClient()
-#pragma warning restore OPENAI001
+    .AsIChatClientWithStoredOutputDisabled("gpt-6-astra")
     .AsAIAgent(new ChatClientAgentOptions()
         {
             ChatOptions = new()
@@ -23,8 +22,7 @@ var agent = new OpenAIClient(Environment.GetEnvironmentVariable("OPENAIAPI_KEY")
                 Tools = [AIFunctionFactory.Create(GetVAT)]
             },
             AIContextProviders = [skillsProvider]
-        },
-        model: "gpt-6-astra"
+        }
     );
 
 AgentSession session = await agent.CreateSessionAsync();
