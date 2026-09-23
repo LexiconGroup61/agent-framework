@@ -47,6 +47,12 @@ EmbeddingClient GetEmbeddingClientInstance()
         .GetEmbeddingClient("text-embedding-nomic-embed-text-v1.5-embedding");
 }
 
+TextSearchProviderOptions options = new TextSearchProviderOptions()
+{
+    SearchTime = TextSearchProviderOptions.TextSearchBehavior.BeforeAIInvoke,
+    RecentMessageMemoryLimit = 6
+};
+
 ChatClientAgent GetChatClientAgentInstance()
 {
     DotNetEnv.Env.Load();
@@ -56,13 +62,20 @@ ChatClientAgent GetChatClientAgentInstance()
 
         .AsAIAgent(new ChatClientAgentOptions()
             {
-                AIContextProvider = [new TextSearchProvider("SearchFunction", "SearchOptions")]
+                AIContextProvider = [new TextSearchProvider(SearchFunction, options)]
             },
             model: "gpt-6-astra",
             instructions: "You are a thoughtful analyser. Think step by step."
             
         );
 }
+
+async Task<IEnumerable<TextSearchProvider.TextSearchResult>> SearchFunction(string message, CancellationToken token)
+{
+    return new List<TextSearchProvider.TextSearchResult>();
+}
+
+
 
 async Task<OpenAIEmbeddingCollection> GetEmbeddings() 
 {
