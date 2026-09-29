@@ -3,6 +3,9 @@
   <Project Path="Code Interpreter/Code Interpreter.csproj" />
   <Project Path="Database access/Database access.csproj" />
   <Project Path="Document/Document.csproj" />
+  <Project Path="GraphRAG/GraphRAG.csproj" />
+  <Project Path="Harness/Harness.csproj" />
+  <Project Path="MCPClient/MCPClient.csproj" />
   <Project Path="RAG/RAG.csproj" />
   <Project Path="Skills/Skills.csproj" />
   <Project Path="Streaming/Streaming.csproj" />
