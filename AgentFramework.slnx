@@ -5,7 +5,9 @@
   <Project Path="Document/Document.csproj" />
   <Project Path="GraphRAG/GraphRAG.csproj" />
   <Project Path="Harness/Harness.csproj" />
+  <Project Path="LocalMCPServer/LocalMCPServer.csproj" />
   <Project Path="MCPClient/MCPClient.csproj" />
+  <Project Path="MCPClientAlternative/MCPClientAlternative.csproj" />
   <Project Path="RAG/RAG.csproj" />
   <Project Path="Skills/Skills.csproj" />
   <Project Path="Streaming/Streaming.csproj" />
